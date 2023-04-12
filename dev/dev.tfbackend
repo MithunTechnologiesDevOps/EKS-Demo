@@ -1,2 +1,2 @@
-bucket="terraform-dev-state-bucket-mithuntech"
+bucket="terraform-dev--mihtun-state-bucket"
 key="eks/terraform.tfstate"
