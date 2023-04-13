@@ -23,12 +23,6 @@ resource "aws_eks_node_group" "main" {
   depends_on = [
     aws_iam_role_policy_attachment.node_eksworkernode
   ]
-
-  provisioner "local-exec" {
-    on_failure = continue
-    command = "aws eks update-kubeconfig --name Demo-EKS-cluster --region ap-south-1 --profile terraformprofile"
-  }
-
 }
 
 resource "aws_iam_role" "node" {
