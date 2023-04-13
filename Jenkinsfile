@@ -8,7 +8,6 @@ pipeline {
         choice(
             choices: ['dev', 'qa'],
             description: 'deployment environment',
-            defaultValue: "dev",
             name: 'ENVIRONMENT')
     }
     stages {
