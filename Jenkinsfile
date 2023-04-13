@@ -1,5 +1,5 @@
 pipeline {
-    any
+    agent any
     parameters {
         choice(
             choices: ['plan', 'apply', 'show', 'destroy'],
