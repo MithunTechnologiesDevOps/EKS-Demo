@@ -70,7 +70,7 @@ pipeline {
                     input message: "Delete the stack?",
                     parameters: [text(name: 'Plan', description: 'Please review the plan', defaultValue: plan)]
                 }
-                sh 'terraform destroy -no-color -force --var-file=${ENVIRONMENT}/${ENVIRONMENT}.tfvars'
+                sh 'terraform destroy -no-color -force'
             }
         }
     }
