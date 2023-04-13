@@ -51,6 +51,15 @@ pipeline {
                 sh 'terraform apply -no-color -input=false tfplan'
             }
         }
+        stage('preview-destroy') {
+            when {
+                expression {params.action == 'destroy'}
+            }
+            steps {
+                sh 'terraform plan -no-color -destroy -out=tfplan  --var-file=${ENVIRONMENT}/${ENVIRONMENT}.tfvars'
+                sh 'terraform show -no-color tfplan > tfplan.txt'
+            }
+        }
         stage('destroy') {
             when {
                 expression { params.action == 'destroy' }
