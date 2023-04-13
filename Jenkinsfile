@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('init') {
             steps {
-                sh 'rm -rf .terraform'
+                sh 'rm -rf .terraform'                        
                 sh 'terraform init -no-color -backend-config="${ENVIRONMENT}/${ENVIRONMENT}.tfbackend" '           
             }
         }
