@@ -8,8 +8,8 @@ pipeline {
         choice(
             choices: ['dev', 'qa'],
             description: 'deployment environment',
+            defaultValue: "dev"
             name: 'ENVIRONMENT')
-        string(defaultValue: "ap", description: 'aws region', name: 'AWS_REGION')
     }
     stages {
         stage('init') {
